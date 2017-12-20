@@ -1,0 +1,439 @@
+//// colors ///
+
+$charcoal: #373737;
+$paper: #f4f4f4;
+$silk: #dcd0c0;
+$paleGold: #c0b283;
+
+@media all and (max-width: 800px) {
+    .navigation {
+      justify-content: space-around;
+    }
+  }
+
+@media all and (max-width: 600px) {
+    .navigation, .header{
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
+    }
+
+    .header {
+        .navigation {
+            text-align: center;
+            a {
+                &:hover {
+                    background-size: 25% 25%;
+                }
+            }
+        }
+    }
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+    // height: 100vh;
+    font-family: 'Roboto';
+    font-weight: 300;
+    // background: url(../IMG/texture.jpg) center center repeat;
+}
+
+.header {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background: white;
+    justify-content: space-between;
+    box-shadow: -2px 2px 10px 0 rgba(0,0,0,.1);
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+  .navigation a {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 5px;
+    text-decoration: none;
+    display: block;
+    margin: 1em;
+    text-transform: uppercase;
+    color: $charcoal;
+    &:hover {
+        background: linear-gradient($paleGold, $paleGold);
+        background-repeat: no-repeat;
+        background-size: 90% 25%;
+        background-position: bottom;
+    }
+  }
+
+  .phone {
+      margin: 0 60px;
+      font-weight: 400;
+  }
+
+  .logo {
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start; 
+      margin: 1em;
+      color: #CDDC39;
+      text-shadow: -2px 2px rgba(0,0,0,.1);
+  }
+
+  .inside-logo {
+      color: #8E24AA;
+  }
+
+  .photo {
+    z-index: 1;
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    top: 5rem;
+    right: 4rem;
+    overflow: hidden;
+    box-shadow: -15px 15px 35px 0 rgba(0,0,0,.2);
+  }
+
+  .photo div {
+    background: url(../IMG/interior.jpeg) center left no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: mainPhoto 35s linear infinite alternate;
+    animation: mainPhoto 35s linear infinite alternate;
+
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+}
+
+@-webkit-keyframes mainPhoto {
+    from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+  }
+  to {
+    -webkit-transform: scale(2.225);
+    transform: scale(2.225);
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+  }
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: baseline;
+    z-index: 10;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),  url(../IMG/interior.jpeg) center left no-repeat;
+    box-shadow: -2px 12px 10px 0 rgba(0,0,0,.1);
+}
+
+h1 {
+    // border-top: 10px solid rgba(0, 0, 0, 0.1);
+    // border-bottom: 10px solid rgba(0, 0, 0, 0.1);
+    z-index: 11;
+    padding: 20px 60px;
+    margin-top: 35vh;
+    color: $charcoal;
+    // background: -webkit-radial-gradient(center, ellipse cover,  rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0) 100%);
+    font-size: 60px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    span {
+        display: block;
+        font-weight: 400;
+        color: $charcoal;
+        background: linear-gradient($paleGold, $paleGold);
+        background-repeat: no-repeat;
+        background-size: 6em 25%;
+        background-position: bottom left;
+    }
+}
+
+h2 {
+    color: $charcoal;
+    width: 100%;
+    font-size: 48px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    text-align: center;
+    line-height: 80px;
+    span {
+        font-weight: 500;
+        background: linear-gradient($paleGold, $paleGold);
+        background-repeat: no-repeat;
+        background-size: 100% 25%;
+        background-position: bottom left;
+    }
+}
+
+.feature {
+    background: #fff;
+    display: flex;
+    padding: 60px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: baseline;
+    z-index: 10;
+    box-shadow: -2px 12px 10px 0 rgba(255, 255, 255, 0.9);
+    // background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),  url(../IMG/third.jpeg) center center no-repeat;
+    .col-4 {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 33.3%;
+        padding: 20px;
+        box-shadow: -2px 12px 10px 0 rgba(0,0,0,.1);
+        .fa-truck:before, .fa-user-circle-o:before, .fa-handshake-o:before {
+            display: flex;
+            justify-content: center;
+            font-size: 32px;   
+            color: $paleGold;
+        }
+        p {
+            margin: 0 auto;
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.6;
+            text-align: center;
+            color: $charcoal;
+        }
+        h3 {
+            color: $charcoal;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+}
+
+.feature-header {
+    background: white;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.services {
+    border-bottom: 2px solid #101010;
+    margin-bottom: 100vh;
+    color: $paper;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: baseline;
+    z-index: 10;
+    background: linear-gradient(rgba(55, 55, 55, .95), rgba(55, 55, 55, .8)),  url(../IMG/third.jpeg) center center repeat;
+    // box-shadow: 32px 32px 32px 32px $silk;
+    .service-header {
+        margin-top: 0;
+        color: $silk;
+        width: 100%;
+        font-size: 48px;
+        font-family: 'Roboto';
+        font-weight: 300;
+        text-align: center;
+        line-height: 80px;
+        span {
+            font-weight: 500;
+            background: none;
+            color: $paleGold;
+        }
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        .col-6 {
+            width: 50%;
+            h3 {
+                .fa {
+                    color: $paleGold;
+                }
+            }
+            p {
+                padding: 10px;
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 1.6;
+                // text-align: center;
+                color: $silk;
+            }
+        }
+    }
+}
+
+#contact {
+	// background: $paper;
+	padding:25px;
+    width: 40%;
+    // box-shadow: -2px 12px 10px 0 rgba(0, 0, 0, 0.1);
+    h3 {
+        color: $paleGold;
+        margin: 0;
+    }
+}
+
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+	width:100%;
+	border:1px solid $paleGold;
+    background:rgba(220, 208, 192, .1);
+    border-radius: 2px;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+
+#contact textarea {
+	height:100px;
+	max-width:100%;
+  resize:none;
+}
+
+#contact button[type="submit"] {
+	cursor: pointer;
+	width:40%;
+    border:1px solid $charcoal;
+    border-radius: 2px;
+	background: $paleGold;
+	color: $charcoal;
+	margin:0 0 5px;
+	padding:10px;
+    font-size:15px;
+    font-weight: 700;
+}
+
+#contact button[type="submit"]:hover {
+    background: #998e68;
+    box-shadow: -2px 12px 10px 0 rgba(0, 0, 0, 0.9);
+	-webkit-transition:background 0.1s ease-in-out;
+	-moz-transition:background 0.1s ease-in-out;
+	transition:background-color 0.1s ease-in-out;
+}
+
+#contact button[type="submit"]:focus {
+    outline: none;
+}
+
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus, #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+.paralax {
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer {
+    display: flex;
+    padding: 60px;
+    background:url(../IMG/pattern.jpg) center center repeat;
+    border-bottom: 4px solid $paleGold;
+    border-top: 2px solid #1d1d1d;
+    //background: linear-gradient(rgba(0, 0, 0, .9), rgba(55, 55, 55, .95), rgba(0, 0, 0, .9)),  url(../IMG/third.jpeg) center center no-repeat;    
+}
+
+.footer-contact {
+    width: 50%;
+}
+
+.footer-info {
+    width: 50%;
+    margin: 60px;
+    span {
+        font-family: 'Roboto';
+        font-weight: 500;
+        display: flex;
+        padding: 12px;
+        font-size: 16px;
+        color: $silk;
+        i {
+            padding: 0 10px 0 0;
+            color: $paleGold;
+        }
+    }
+    .info-header {
+        font-family: 'Roboto';
+        font-weight: 700;
+        display: flex;
+        padding: 12px;
+        font-size: 20px;
+        color: $paleGold;
+    }
+}
+
+.footer-end {
+    background: linear-gradient(rgba(0, 0, 0, .95), rgba(0, 0, 0, .8)),  url(../IMG/pattern.jpg) center center repeat;
+    padding: 40px;
+    .copyright {
+        font-family: 'Roboto';
+        font-weight: 500;
+        margin: 0 auto;
+        text-align: center;
+        color: #5d5d5d;
+    }
+}
+
+
+
+
