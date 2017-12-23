@@ -39,8 +39,6 @@
     margin: 24px;
     font-size: 48px;
     display: flex;
-    position: absolute;
-    right: 1px;
     cursor: pointer; }
   .main h1 {
     font-size: 56px;
@@ -97,7 +95,11 @@ body {
   background: none;
   border: none;
   width: fit-content;
-  z-index: 1010; }
+  z-index: 1010;
+  position: fixed;
+  top: 0;
+  right: 1px;
+  color: #c0b283; }
 
 .header {
   width: 100%;
@@ -446,13 +448,5 @@ fieldset {
   width: 100%;
   top: 0;
   z-index: 1003; }
-
-.main-nav-scrolled2 {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1003;
-  background: transparent;
-  color: white; }
 
 /*# sourceMappingURL=style.css.map */
